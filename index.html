@@ -111,8 +111,6 @@ p:last-child{margin-bottom:0}
 }
 strong{font-weight:500}
 .accent{background:var(--chartreuse);padding:0 .18em}
-a.inline{color:var(--bistre);text-decoration:underline;text-decoration-color:var(--flint);text-underline-offset:3px}
-a.inline:hover{text-decoration-color:var(--bistre)}
 
 /* drop cap */
 .dropcap::first-letter{
@@ -138,7 +136,6 @@ section{padding-block:var(--gap);scroll-margin-top:112px}
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
 .split.wide-left{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
 .split.wide-right{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
-.stack{display:flex;flex-direction:column;gap:24px}
 
 /* ---------- figures ---------- */
 figure{margin:0}
@@ -148,8 +145,6 @@ figure{margin:0}
 }
 .plate.bone{background:var(--bone)}
 .plate img{display:block;width:100%;height:auto}
-.plate.narrow img{max-width:220px}
-.flip-x{transform:scaleX(-1)}
 figcaption{
   font-family:var(--mono);font-size:10px;line-height:1.5;letter-spacing:.1em;
   text-transform:uppercase;color:var(--graphite);
@@ -172,7 +167,6 @@ figcaption{
   font-size:clamp(26px,3.6vw,44px);line-height:1.15;letter-spacing:-.021em;
   display:block;max-width:24ch;
 }
-.pull .attr{font-size:14px;color:var(--graphite);margin-top:24px}
 
 /* ---------- interactive embeds ---------- */
 .embed{background:var(--bone);border-radius:4px;padding:16px}
@@ -211,6 +205,15 @@ footer .rule{margin:48px 0 24px}
   .capsule nav{display:none}
   .capsule .right{grid-column:2}
   .hero{padding-block-start:40px}
+}
+
+@media (max-width:560px){
+  /* the capsule runs out of room once the wordmark, the text link and the button
+     all have to fit on one line */
+  .capsule{padding:8px 8px 8px 16px;gap:8px}
+  .capsule .signin{display:none}
+  .wordmark{font-size:17px}
+  .btn-pill{padding:11px 18px}
 }
 </style>
 </head>
